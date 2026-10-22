@@ -4,114 +4,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>برای پانیذ ❤️</title>
+<title>جوجمی ❤️</title>
+
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
   background: radial-gradient(circle, #52001e, #16000c 75%);
   font-family: Tahoma, sans-serif;
-  color: white;
 }
 
 .scene {
-  text-align: center;
   position: relative;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .heart {
-  position: relative;
-  width: 130px;
-  height: 130px;
-  margin: 40px auto;
+  position: absolute;
+  width: 140px;
+  height: 140px;
   background: #ff1744;
   transform: rotate(-45deg);
   animation: beat 1s infinite;
-  filter: drop-shadow(0 0 25px #ff1744);
+  filter: drop-shadow(0 0 22px #ff1744);
 }
 
 .heart::before,
 .heart::after {
   content: "";
   position: absolute;
-  width: 130px;
-  height: 130px;
-  background: #ff1744;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
+  background: #ff1744;
 }
 
-.heart::before { top: -65px; left: 0; }
-.heart::after { top: 0; left: 65px; }
+.heart::before {
+  top: -70px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: 70px;
+}
 
 .name {
-  position: absolute;
+  position: relative;
   z-index: 2;
-  top: 46px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 180px;
-  font-size: 30px;
+  color: white;
+  font-size: 29px;
   font-weight: bold;
-  text-shadow: 0 0 12px white;
+  text-shadow: 0 0 10px white, 0 0 20px #ff8aa5;
+  transform: translateY(8px);
   white-space: nowrap;
-}
-
-h1 {
-  font-size: 28px;
-  margin-bottom: 8px;
-}
-
-p {
-  color: #ffc5d5;
-  font-size: 16px;
-}
-
-@keyframes beat {
-  0%, 100% { scale: 1; }
-  50% { scale: 1.13; }
 }
 
 .floating {
   position: absolute;
   bottom: -40px;
+  color: #ff477e;
   animation: rise 7s linear infinite;
-  opacity: 0;
   pointer-events: none;
 }
 
+@keyframes beat {
+  0%, 100% { scale: 1; }
+  50% { scale: 1.12; }
+}
+
 @keyframes rise {
-  0% { transform: translateY(0) rotate(0); opacity: 0; }
-  20% { opacity: .8; }
-  100% { transform: translateY(-110vh) rotate(35deg); opacity: 0; }
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 0;
+  }
+  20% { opacity: 0.8; }
+  100% {
+    transform: translateY(-110vh) rotate(35deg);
+    opacity: 0;
+  }
 }
 </style>
 </head>
-<body>
-<div class="scene">
-  <h1>یه قلب برای تو ❤️</h1>
-  <p>برای خاص‌ترین آدم دنیا...</p>
-  <div class="heart"></div>
-  <div class="name">پانیذ ❤️</div>
-  <p>این قلب با اسم تو می‌تپه 💗</p>
-</div>
 
-<script>
-for (let i = 0; i < 24; i++) {
-  const heart = document.createElement("div");
-  heart.className = "floating";
-  heart.textContent = "♥";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = (14 + Math.random() * 24) + "px";
-  heart.style.color = "#ff477e";
-  heart.style.animationDelay = Math.random() * 7 + "s";
-  document.body.appendChild(heart);
-}
-</script>
+<body>
+  <div class="scene">
+    <div class="heart"></div>
+    <div class="name">جوجمی ❤️</div>
+  </div>
+
+  <script>
+    for (let i = 0; i < 24; i++) {
+      const heart = document.createElement("div");
+      heart.className = "floating";
+      heart.textContent = "♥";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (14 + Math.random() * 24) + "px";
+      heart.style.animationDelay = Math.random() * 7 + "s";
+      document.body.appendChild(heart);
+    }
+  </script>
 </body>
 </html>
